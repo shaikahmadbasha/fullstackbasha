@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="author" content="">
+		<link rel="icon" href="images/logo_icon.png">
+		
+		
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/jquery.feedback_me.css" rel="stylesheet">
+		<link href="css/jquery-ui.min.css" rel="stylesheet">
+		<link href="css/offcanvas.css" rel="stylesheet">
+		<link href="css/employee.css" rel="stylesheet">
+		
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+		<link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+		<nav id="topstart" class="navbar navbar-default navbar-fixed-top navbar-settings" style="position: absolute;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="">
+					<img src="images/logo_white.png" alt="Shaik Ahmad Basha" style="width:200px;height:85px">
+					</a>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarbutton1" aria-expanded="false" >
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+				</div>
+
+			</div>
+		</nav>
+
+	<div>
+		<div class="container-fluid" id="maincontainer">
+			
+			<div class="container-fluid listemp-container" id="listemp-container">
+				<h2>List of Employees</h2>
+				<div id="listEmpId">
+					<table style="width:100%" id="listEmpTable">
+						<thead>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Telephone</th>
+							<th>Address</th>
+							<th>Action</th>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+					
+					
+					
+					<br><br>
+								
+				</div>
+				<button id="subscibe" type="submit" data-dismiss="modal" class="btn btn-primary disabled" onclick="employee.addEmployee()">Add Employee</button>
+			</div>
+			
+			<div class="container-fluid addemp-container" id="addemp-container">
+			
+			</div>
+		
+		</div>
+	
+	</div>
+
+
+
+		<footer class="footer" >
+			<div class="container-fluid" >
+				<div class="row">
+					<div class="col-md-3" style="margin-top: 5px;">
+						<span title="About Me" style="cursor: pointer; cursor: hand;margin-right:10px" onclick="Employee.aboutme()" >About Me</span>
+					</div>
+					<div class="col-md-3" style="margin-top: 5px;">
+						<span title="https://www.facebook.com/shaikahmadbasha" style="cursor: pointer; cursor: hand;" onclick="window.open('https://www.facebook.com/shaikahmadbasha', '_blank')" ><i class="fa fa-facebook fa-lg"> </i></span>
+					</div>
+					<div class="fb-like col-md-6" style="margin-top: 5px;" data-href="https://www.facebook.com/shaikahmadbasha" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+				</div>
+			</div> 
+		
+		</footer>
+
+		<!-- Bootstrap core JavaScript
+			================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.feedback_me.js"></script>
+		<script src="js/validator.min.js"></script>
+		<script src="js/ajax.js"></script>
+		<script src="js/bootstrap-notify.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/offcanvas.js"></script>
+		<script src="js/employee.js"></script>
+		<script src="js/stubs.js"></script>
+		<script src="js/jquery.steps.min.js"></script>
+		
+		
+		
+		
+		<script>
+			if (document.location.search.match(/type=embed/gi)) {
+			window.parent.postMessage("resize", "*");
+			}
+		</script>
+</body>
+</html>
