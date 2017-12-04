@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.CriteriaUpdate;
@@ -31,7 +32,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		Root<Employee> root = criteriaQuery.from(Employee.class);
 		return entityManager.createQuery(criteriaQuery).getResultList();
 	}
-	
+
 	@Override
 	public void updateEmployee(Employee employee) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
@@ -41,23 +42,30 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		if (!StringUtils.isEmpty(employee.getName())) {
 			update.set("name", employee.getName());
 		}
-		
+
 		if (!StringUtils.isEmpty(employee.getEmail())) {
 			update.set("email", employee.getEmail());
 		}
-		
+
 		if (!StringUtils.isEmpty(employee.getAddress())) {
 			update.set("address", employee.getAddress());
 		}
-		
+
 		if (!StringUtils.isEmpty(employee.getTelephone())) {
 			update.set("telephone", employee.getTelephone());
 		}
-		
+
 		update.where(cb.equal(root.get("id"), employee.getId()));
 		entityManager.createQuery(update).executeUpdate();
-		
+
 		System.out.println("*** updated **************");
 	}
 
+	@Override
+	public void deleteEmployee(Employee employee) {
+		System.out.println("delete employee " + employee.getId());
+		Query query = entityManager.createQuery("DELETE FROM Employee WHERE id = " + employee.getId());
+		query.executeUpdate();
+		System.out.println("deleted ");
+	}
 }

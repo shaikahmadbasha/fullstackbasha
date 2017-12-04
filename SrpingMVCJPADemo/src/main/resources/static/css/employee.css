@@ -129,3 +129,15 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+.modal-dialog{
+	top: 100px !important;
+}
+
+.modal-footer {
+    border-top: 0 !important;
+}
+.modal-header {
+    border-top: 0 !important;
+	background-color: #0F4973 !important;
+}

@@ -38,10 +38,16 @@ public class EmployeeController {
 		employeeService.addEmployee(employee);
 	}
 
-	@RequestMapping("/updateEmployee")
-	public void updateEmployee(@RequestBody Employee employee) {
+	@RequestMapping("/editEmployee")
+	public void editEmployee(@RequestBody Employee employee) {
 		System.out.println("******************* Update employee : " + employee);
 		employeeService.updateEmployee(employee);
 	}
 
+	@RequestMapping("/deleteEmployee")
+	public void deleteEmployee(@RequestBody Employee employee) {
+		System.out.println("******************* Delete employee : " + employee);
+		employeeService.deleteEmployee(employee);
+	}
+	
 }

@@ -35,23 +35,99 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<nav id="topstart" class="navbar navbar-default navbar-fixed-top navbar-settings" style="position: absolute;">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="">
-					<img src="images/logo_white.png" alt="Shaik Ahmad Basha" style="width:200px;height:85px">
-					</a>
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarbutton1" aria-expanded="false" >
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-				</div>
-
+	<nav id="topstart" class="navbar navbar-default navbar-fixed-top navbar-settings" style="position: absolute;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="">
+				<img src="images/logo_white.png" alt="Shaik Ahmad Basha" style="width:200px;height:85px">
+				</a>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarbutton1" aria-expanded="false" >
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
 			</div>
-		</nav>
 
+		</div>
+	</nav>
+
+	<!-- Add Employee modal -->
+	<div class="modal fade" id="addEmployeeModal" role="dialog">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" style="color:white;opacity:1;background:transparent">&times;</button>
+			  <h4 class="modal-title">Add Employee Details</h4>
+			</div>
+			<div class="modal-body" style="color:green">
+			  <div class="row">
+				<div class="col-sm-9">
+					<form role="form" data-toggle="validator" id="addEmployeeForm" >
+						<div class="form-group">
+							<input type="text" class="form-control" id="empName" placeholder="Name" required />
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" id="empEmail" placeholder="Email" required />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="empTelephone" pattern="^[0-9]{10,11}$" placeholder="Telephone" required />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="empAddress" placeholder="Address" required />
+						</div>
+						<div class="form-group" style="text-align:right">
+							<button id="subscibe" type="submit" data-dismiss="modal" class="btn btn-primary disabled" onclick="Employee.addEmployee()">Add
+							</button>
+						</div>
+						<div></div>
+					</form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>	
+	
+
+	<!-- Edit Employee modal -->
+	<div class="modal fade" id="editEmployeeModal" role="dialog">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal" style="color:white;opacity:1;background:transparent">&times;</button>
+			  <h4 class="modal-title">Edit Employee Details</h4>
+			</div>
+			<div class="modal-body" style="color:green">
+			  <div class="row">
+				<div class="col-sm-9">
+					<form role="form" data-toggle="validator" id="editEmployeeForm" >
+						<div class="form-group">
+							<input type="text" class="form-control" id="empNameEdit" placeholder="Name" required />
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" id="empEmailEdit" placeholder="Email" required />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="empTelephoneEdit" pattern="^[0-9]{10,11}$" placeholder="Telephone" required />
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="empAddressEdit" placeholder="Address" required />
+						</div>
+						<div class="form-group" style="text-align:right">
+							<button id="subscibe" type="submit" data-dismiss="modal" class="btn btn-primary disabled" onclick="Employee.editEmployee()">Edit
+							</button>
+						</div>
+						<div></div>
+					</form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>	
+	
+	
 	<div>
 		<div class="container-fluid" id="maincontainer">
 			
@@ -76,7 +152,7 @@
 					<br><br>
 								
 				</div>
-				<button id="subscibe" type="submit" data-dismiss="modal" class="btn btn-primary disabled" onclick="employee.addEmployee()">Add Employee</button>
+				<button id="subscibe" class="btn btn-primary" onclick="Employee.openAddEmployeeModal()">Add Employee</button>
 			</div>
 			
 			<div class="container-fluid addemp-container" id="addemp-container">

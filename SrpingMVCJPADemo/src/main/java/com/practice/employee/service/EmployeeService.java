@@ -15,4 +15,6 @@ public interface EmployeeService {
 	List<Employee> listEmployees();
 	
 	void updateEmployee(Employee employee);
+	
+	void deleteEmployee(Employee employee);
 }

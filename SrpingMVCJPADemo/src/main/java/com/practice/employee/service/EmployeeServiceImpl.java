@@ -39,4 +39,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void updateEmployee(Employee employee) {
 		employeeDAO.updateEmployee(employee);
 	}
+	
+	@Transactional
+	@Override
+	public void deleteEmployee(Employee employee) {
+		employeeDAO.deleteEmployee(employee);
+	}
 }
